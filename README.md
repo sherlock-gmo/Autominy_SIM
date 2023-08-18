@@ -1,5 +1,5 @@
 # Autominy_SIM
-This repository is a collection of software developed for the [AutoMiny](https://autominy.github.io/AutoMiny/) vehicle. This software runs in the simulator: https://github.com/ITAM-Robotica/EK_AutoNOMOS_Sim
+This repository is a collection of software developed for the [AutoMiny](https://autominy.github.io/AutoMiny/) vehicle. This software runs on simulator: https://github.com/ITAM-Robotica/EK_AutoNOMOS_Sim
 
 ## Required Dependencies
 This software was tested on ROS melodic and ROS noetic.
