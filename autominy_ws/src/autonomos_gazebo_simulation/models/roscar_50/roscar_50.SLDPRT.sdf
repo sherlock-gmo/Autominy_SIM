@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='roscar_50.SLDPRT'>
+    <link name='roscar_50'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.12271 0 -0 0</pose>
+        <mass>0.1666</mass>
+        <inertia>
+          <ixx>0.00080301</ixx>
+          <ixy>1.71066e-36</ixy>
+          <ixz>-1.796e-20</ixz>
+          <iyy>0.00090385</iyy>
+          <iyz>-4.82143e-20</iyz>
+          <izz>0.00011983</izz>
+        </inertia>
+      </inertial>
+      <collision name='roscar_50_collision'>
+        <pose frame=''>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roscar_50/meshes/roscar_50.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roscar_50_visual'>
+        <pose frame=''>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roscar_50/meshes/roscar_50.dae</uri>
+          </mesh>
+        </geometry>
+
+				<material>
+					<script>
+            <uri>model://roscar_50/materials/scripts</uri>
+            <uri>model://roscar_50/materials/textures</uri>
+						<name>50/Texture</name>
+					</script>
+				</material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>

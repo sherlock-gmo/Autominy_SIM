@@ -1,0 +1,47 @@
+<sdf version='1.6'>
+  <model name='roscar_semaforo.SLDPRT'>
+    <link name='roscar_semaforo'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0.00434 0.15211 0 -0 0</pose>
+        <mass>0.26771</mass>
+        <inertia>
+          <ixx>0.0014357</ixx>
+          <ixy>3.9059e-21</ixy>
+          <ixz>-3.4596e-20</ixz>
+          <iyy>0.001454</iyy>
+          <iyz>4.0984e-05</iyz>
+          <izz>8.2468e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='roscar_semaforo_collision'>
+        <pose frame=''>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roscar_sem_amarillo/meshes/semaforo_amarillo.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roscar_semaforo_visual'>
+        <pose frame=''>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roscar_sem_amarillo/meshes/semaforo_amarillo.dae</uri>
+          </mesh>
+        </geometry>
+
+				<material>
+					<script>
+            <uri>model://roscar_sem_amarillo/materials/scripts</uri>
+            <uri>model://roscar_sem_amarillo/materials/textures</uri>
+						<name>semaforo/Texture</name>
+					</script>
+				</material>
+
+
+      </visual>
+    </link>
+  </model>
+</sdf>

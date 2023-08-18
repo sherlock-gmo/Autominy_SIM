@@ -1,0 +1,14 @@
+material 50/Texture
+{
+	receive_shadows_off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture 50.png
+      }
+    }
+  }
+}

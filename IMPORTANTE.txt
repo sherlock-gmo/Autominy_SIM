@@ -1,0 +1,2 @@
+Si se usa la versión 10.1 de CUDA, compilar el workspace con:
+$ catkin_make -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=/usr/bin/gcc-8

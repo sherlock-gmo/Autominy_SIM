@@ -1,0 +1,14 @@
+material alto/Texture
+{
+	receive_shadows_off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture alto.png
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+yolo_model:
+
+  config_file:
+    name: dotmex_yolov3.cfg
+  weight_file:
+    name: dotmex_yolov3_15000.weights
+  threshold:
+    value: 0.75
+  detection_classes:
+    names:
+      - carro
+      - camion
+      - bicicleta
+      - moto
+      - peaton
+      - perro
+      - gato
+      - caballo
+      - alto
+      - noest
+      - 20km
+      - 30km
+      - 40km
+      - 50km
+      - 100km
+      - sem_verde
+      - sem_amarillo
+      - sem_rojo
+      - sem_NA
+      - tren

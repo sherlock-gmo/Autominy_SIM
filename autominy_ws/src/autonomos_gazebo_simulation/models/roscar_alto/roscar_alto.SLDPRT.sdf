@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='roscar_alto.SLDPRT'>
+    <link name='roscar_alto'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.12423 0 -0 0</pose>
+        <mass>0.1728</mass>
+        <inertia>
+          <ixx>0.00082546</ixx>
+          <ixy>5.5204e-23</ixy>
+          <ixz>-2.8152e-20</ixz>
+          <iyy>0.00093797</iyy>
+          <iyz>-5.34591e-20</iyz>
+          <izz>0.0001316</izz>
+        </inertia>
+      </inertial>
+      <collision name='roscar_alto_collision'>
+        <pose frame=''>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roscar_alto/meshes/roscar_alto.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roscar_alto_visual'>
+        <pose frame=''>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roscar_alto/meshes/roscar_alto.dae</uri>
+          </mesh>
+        </geometry>
+
+				<material>
+					<script>
+            <uri>model://roscar_alto/materials/scripts</uri>
+            <uri>model://roscar_alto/materials/textures</uri>
+						<name>alto/Texture</name>
+					</script>
+				</material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>

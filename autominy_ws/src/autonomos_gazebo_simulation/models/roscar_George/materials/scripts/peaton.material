@@ -1,0 +1,14 @@
+material George/Texture
+{
+	receive_shadows_off
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture George.png
+      }
+    }
+  }
+}

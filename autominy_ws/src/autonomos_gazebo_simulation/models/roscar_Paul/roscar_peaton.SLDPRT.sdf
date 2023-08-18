@@ -1,0 +1,47 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='roscar_peaton.SLDPRT'>
+    <link name='roscar_peaton'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 -0.0005 0 0 -0 0</pose>
+        <mass>0.016542</mass>
+        <inertia>
+          <ixx>4.4665e-05</ixx>
+          <ixy>-4.07713e-37</ixy>
+          <ixz>6.6616e-21</ixz>
+          <iyy>5.6306e-05</iyy>
+          <iyz>-2.74932e-21</iyz>
+          <izz>1.1644e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='roscar_peaton_collision'>
+        <pose frame=''>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roscar_Paul/meshes/roscar_peaton.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roscar_peaton_visual'>
+        <pose frame=''>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://roscar_Paul/meshes/roscar_peaton.dae</uri>
+          </mesh>
+        </geometry>
+
+				<material>
+					<script>
+            <uri>model://roscar_Paul/materials/scripts</uri>
+            <uri>model://roscar_Paul/materials/textures</uri>
+						<name>Paul/Texture</name>
+					</script>
+				</material>
+
+      </visual>
+    </link>
+  </model>
+</sdf>

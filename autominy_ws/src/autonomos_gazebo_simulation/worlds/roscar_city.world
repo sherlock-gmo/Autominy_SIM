@@ -1,0 +1,2039 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='pista_TMR2021'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>20 20</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_pista_TMR2021/materials/scripts</uri>
+              <uri>model://roscar_pista_TMR2021/materials/textures/</uri>
+              <name>pista_TMR2021</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.260163 0.825992 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_auto_v1.SLDPRT'>
+      <link name='roscar_auto_v1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.01768 0.039509 0 -0 0</pose>
+          <mass>7.7376</mass>
+          <inertia>
+            <ixx>0.089072</ixx>
+            <ixy>1.0466e-07</ixy>
+            <ixz>-5.6325e-08</ixz>
+            <iyy>0.032387</iyy>
+            <iyz>-0.0038544</iyz>
+            <izz>0.10172</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_auto_v1_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_auto_v1_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.98703 3.62965 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_100.SLDPRT'>
+      <link name='roscar_100'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.12271 0 -0 0</pose>
+          <mass>0.1666</mass>
+          <inertia>
+            <ixx>0.00080301</ixx>
+            <ixy>1.71066e-36</ixy>
+            <ixz>-1.796e-20</ixz>
+            <iyy>0.00090385</iyy>
+            <iyz>-4.82143e-20</iyz>
+            <izz>0.00011983</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_100_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_100/meshes/roscar_100.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_100_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_100/meshes/roscar_100.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_100/materials/scripts</uri>
+              <uri>model://roscar_100/materials/textures</uri>
+              <name>100/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.09902 4.43345 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_semaforo.SLDPRT'>
+      <link name='roscar_semaforo'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.00434 0.15211 0 -0 0</pose>
+          <mass>0.26771</mass>
+          <inertia>
+            <ixx>0.0014357</ixx>
+            <ixy>3.9059e-21</ixy>
+            <ixz>-3.4596e-20</ixz>
+            <iyy>0.001454</iyy>
+            <iyz>4.0984e-05</iyz>
+            <izz>8.2468e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_semaforo_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_sem_rojo/meshes/semaforo_rojo.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_semaforo_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_sem_rojo/meshes/semaforo_rojo.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_sem_rojo/materials/scripts</uri>
+              <uri>model://roscar_sem_rojo/materials/textures</uri>
+              <name>semaforo/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.8922 4.38735 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_50.SLDPRT'>
+      <link name='roscar_50'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.12271 0 -0 0</pose>
+          <mass>0.1666</mass>
+          <inertia>
+            <ixx>0.00080301</ixx>
+            <ixy>1.71066e-36</ixy>
+            <ixz>-1.796e-20</ixz>
+            <iyy>0.00090385</iyy>
+            <iyz>-4.82143e-20</iyz>
+            <izz>0.00011983</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_50_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_50/meshes/roscar_50.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_50_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_50/meshes/roscar_50.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_50/materials/scripts</uri>
+              <uri>model://roscar_50/materials/textures</uri>
+              <name>50/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-3.22283 4.40847 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_peaton.SLDPRT'>
+      <link name='roscar_peaton'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.0005 0 0 -0 0</pose>
+          <mass>0.016542</mass>
+          <inertia>
+            <ixx>4.4665e-05</ixx>
+            <ixy>-4.07713e-37</ixy>
+            <ixz>6.6616e-21</ixz>
+            <iyy>5.6306e-05</iyy>
+            <iyz>-2.74932e-21</iyz>
+            <izz>1.1644e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_peaton_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_Paul/meshes/roscar_peaton.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_peaton_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_Paul/meshes/roscar_peaton.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_Paul/materials/scripts</uri>
+              <uri>model://roscar_Paul/materials/textures</uri>
+              <name>Paul/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.15801 3.63772 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_auto_v1.SLDPRT_0'>
+      <link name='roscar_auto_v1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.01768 0.039509 0 -0 0</pose>
+          <mass>7.7376</mass>
+          <inertia>
+            <ixx>0.089072</ixx>
+            <ixy>1.0466e-07</ixy>
+            <ixz>-5.6325e-08</ixz>
+            <iyy>0.032387</iyy>
+            <iyz>-0.0038544</iyz>
+            <izz>0.10172</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_auto_v1_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_auto_v1_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-5.07987 0.188763 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_peaton.SLDPRT_0'>
+      <link name='roscar_peaton'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.0005 0 0 -0 0</pose>
+          <mass>0.016542</mass>
+          <inertia>
+            <ixx>4.4665e-05</ixx>
+            <ixy>-4.07713e-37</ixy>
+            <ixz>6.6616e-21</ixz>
+            <iyy>5.6306e-05</iyy>
+            <iyz>-2.74932e-21</iyz>
+            <izz>1.1644e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_peaton_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_Jhon/meshes/roscar_peaton.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_peaton_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_Jhon/meshes/roscar_peaton.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_Jhon/materials/scripts</uri>
+              <uri>model://roscar_Jhon/materials/textures</uri>
+              <name>Jhon/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-4.65019 0.690039 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_est.SLDPRT'>
+      <link name='roscar_est'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0 0 0.1294 0 -0 0</pose>
+          <mass>0.19789</mass>
+          <inertia>
+            <ixx>0.00092185</ixx>
+            <ixy>-3.8685e-23</ixy>
+            <ixz>3.9404e-20</ixz>
+            <iyy>0.0010948</iyy>
+            <iyz>-5.66311e-20</iyz>
+            <izz>0.0001925</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_est_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_est/meshes/roscar_est.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_est_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_est/meshes/roscar_est.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_est/materials/scripts</uri>
+              <uri>model://roscar_est/materials/textures</uri>
+              <name>est/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-4.34575 0.053805 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_alto.SLDPRT'>
+      <link name='roscar_alto'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.12423 0 -0 0</pose>
+          <mass>0.1728</mass>
+          <inertia>
+            <ixx>0.00082546</ixx>
+            <ixy>5.5204e-23</ixy>
+            <ixz>-2.8152e-20</ixz>
+            <iyy>0.00093797</iyy>
+            <iyz>-5.34591e-20</iyz>
+            <izz>0.0001316</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_alto_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_alto/meshes/roscar_alto.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_alto_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_alto/meshes/roscar_alto.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_alto/materials/scripts</uri>
+              <uri>model://roscar_alto/materials/textures</uri>
+              <name>alto/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.000479 0.536191 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_peaton.SLDPRT_1'>
+      <link name='roscar_peaton'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.0005 0 0 -0 0</pose>
+          <mass>0.016542</mass>
+          <inertia>
+            <ixx>4.4665e-05</ixx>
+            <ixy>-4.07713e-37</ixy>
+            <ixz>6.6616e-21</ixz>
+            <iyy>5.6306e-05</iyy>
+            <iyz>-2.74932e-21</iyz>
+            <izz>1.1644e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_peaton_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_Ringo/meshes/roscar_peaton.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_peaton_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_Ringo/meshes/roscar_peaton.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_Ringo/materials/scripts</uri>
+              <uri>model://roscar_Ringo/materials/textures</uri>
+              <name>Ringo/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.20402 -0.658551 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_auto_v1.SLDPRT_1'>
+      <link name='roscar_auto_v1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.01768 0.039509 0 -0 0</pose>
+          <mass>7.7376</mass>
+          <inertia>
+            <ixx>0.089072</ixx>
+            <ixy>1.0466e-07</ixy>
+            <ixz>-5.6325e-08</ixz>
+            <iyy>0.032387</iyy>
+            <iyz>-0.0038544</iyz>
+            <izz>0.10172</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_auto_v1_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_auto_v1_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.92141 0.477552 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_auto_v1.SLDPRT_2'>
+      <link name='roscar_auto_v1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.01768 0.039509 0 -0 0</pose>
+          <mass>7.7376</mass>
+          <inertia>
+            <ixx>0.089072</ixx>
+            <ixy>1.0466e-07</ixy>
+            <ixz>-5.6325e-08</ixz>
+            <iyy>0.032387</iyy>
+            <iyz>-0.0038544</iyz>
+            <izz>0.10172</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_auto_v1_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_auto_v1_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.9406 1.02076 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_auto_v1.SLDPRT_3'>
+      <link name='roscar_auto_v1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.01768 0.039509 0 -0 0</pose>
+          <mass>7.7376</mass>
+          <inertia>
+            <ixx>0.089072</ixx>
+            <ixy>1.0466e-07</ixy>
+            <ixz>-5.6325e-08</ixz>
+            <iyy>0.032387</iyy>
+            <iyz>-0.0038544</iyz>
+            <izz>0.10172</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_auto_v1_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_auto_v1_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.9662 2.30326 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_auto_v1.SLDPRT_4'>
+      <link name='roscar_auto_v1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.01768 0.039509 0 -0 0</pose>
+          <mass>7.7376</mass>
+          <inertia>
+            <ixx>0.089072</ixx>
+            <ixy>1.0466e-07</ixy>
+            <ixz>-5.6325e-08</ixz>
+            <iyy>0.032387</iyy>
+            <iyz>-0.0038544</iyz>
+            <izz>0.10172</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_auto_v1_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_auto_v1_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_auto_v1/meshes/roscar_auto_v1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>5.91395 2.81838 0 0 -0 0</pose>
+    </model>
+    <model name='roscar_semaforo.SLDPRT_0'>
+      <link name='roscar_semaforo'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.00434 0.15211 0 -0 0</pose>
+          <mass>0.26771</mass>
+          <inertia>
+            <ixx>0.0014357</ixx>
+            <ixy>3.9059e-21</ixy>
+            <ixz>-3.4596e-20</ixz>
+            <iyy>0.001454</iyy>
+            <iyz>4.0984e-05</iyz>
+            <izz>8.2468e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='roscar_semaforo_collision'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_sem_verde/meshes/semaforo_verde.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='roscar_semaforo_visual'>
+          <pose>0 0 0 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://roscar_sem_verde/meshes/semaforo_verde.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://roscar_sem_verde/materials/scripts</uri>
+              <uri>model://roscar_sem_verde/materials/textures</uri>
+              <name>semaforo/Texture</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.532987 -0.624959 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>1038 964000000</sim_time>
+      <real_time>52 970054580</real_time>
+      <wall_time>1678842866 574105626</wall_time>
+      <iterations>50243</iterations>
+      <model name='AutoNOMOS_mini'>
+        <pose>3.48313 4.1036 0.019745 9.6e-05 0.000954 -3.14109</pose>
+        <scale>1 1 1</scale>
+        <link name='ackermann_bar_link'>
+          <pose>3.37312 4.10354 0.029627 9.6e-05 0.000954 -3.14109</pose>
+          <velocity>-5.2e-05 3e-06 -0.004909 2.2e-05 -0.001456 7e-06</velocity>
+          <acceleration>0.001707 -0.00074 -4.41891 0.083792 0.14735 0.004024</acceleration>
+          <wrench>1.7e-05 -7e-06 -0.044189 0 -0 0</wrench>
+        </link>
+        <link name='back_left_wheel_link'>
+          <pose>3.60817 4.00366 0.029979 1.5709 0.273289 -3.14106</pose>
+          <velocity>-4.2e-05 7e-06 -0.034178 8.4e-05 -0.001539 4e-06</velocity>
+          <acceleration>0.00308 0.002247 -56.3167 0.229606 -0.02823 0.000105</acceleration>
+          <wrench>3.1e-05 2.2e-05 -0.563167 0 -0 0</wrench>
+        </link>
+        <link name='back_right_wheel_link'>
+          <pose>3.60807 4.20366 0.029977 1.5709 0.278432 -3.14106</pose>
+          <velocity>-4.4e-05 7e-06 -0.03853 7.3e-05 -0.001543 4e-06</velocity>
+          <acceleration>0.00185 0.003068 -62.3974 0.200965 -0.028196 9.5e-05</acceleration>
+          <wrench>1.9e-05 3.1e-05 -0.623974 0 -0 0</wrench>
+        </link>
+        <link name='base_link'>
+          <pose>3.48313 4.1036 0.019745 9.6e-05 0.000954 -3.14109</pose>
+          <velocity>-3.9e-05 4e-06 -0.008005 -3.9e-05 -0.001408 4e-06</velocity>
+          <acceleration>-0.001376 1.8e-05 -8.74505 0.003844 0.241259 6.7e-05</acceleration>
+          <wrench>-0.001376 1.8e-05 -8.74505 0 -0 0</wrench>
+        </link>
+        <link name='body'>
+          <pose>3.48313 4.1036 0.019746 9.6e-05 0.000954 -3.14109</pose>
+          <velocity>-3.9e-05 4e-06 -0.008414 -4e-05 -0.00142 4e-06</velocity>
+          <acceleration>-0.001221 1.1e-05 -9.35529 0.004532 0.235071 0.000159</acceleration>
+          <wrench>-0.007325 6.7e-05 -56.1318 0 -0 0</wrench>
+        </link>
+        <link name='camera_link'>
+          <pose>3.51299 4.10363 0.164772 9.6e-05 0.060954 -3.14108</pose>
+          <velocity>-0.000228 9e-06 -0.007744 -3.8e-05 -0.001353 4e-06</velocity>
+          <acceleration>0.044287 -0.001088 -8.42242 0.005405 0.28984 9.1e-05</acceleration>
+          <wrench>0.005301 -0.00013 -1.00816 0 -0 0</wrench>
+        </link>
+        <link name='front_left_bar_link'>
+          <pose>3.35815 4.04353 0.029818 0.000104 0.000954 -3.14105</pose>
+          <velocity>-4.8e-05 -1.1e-05 -0.054988 0.001972 -0.001421 -3.2e-05</velocity>
+          <acceleration>0.002475 -0.019564 -69.819 2.63375 0.171287 -0.032223</acceleration>
+          <wrench>2.5e-05 -0.000196 -0.69819 0 -0 0</wrench>
+        </link>
+        <link name='front_left_wheel_link'>
+          <pose>3.35817 4.00353 0.029938 1.57091 0.170657 -3.14103</pose>
+          <velocity>-4.2e-05 -5.5e-05 -0.083906 0.00211 -0.001509 -3.2e-05</velocity>
+          <acceleration>0.003304 -0.075109 -107.609 2.81407 0.001526 -0.032898</acceleration>
+          <wrench>3.3e-05 -0.000751 -1.07609 0 -0 0</wrench>
+        </link>
+        <link name='front_right_bar_link'>
+          <pose>3.35809 4.16353 0.029812 8.8e-05 0.000954 -3.14107</pose>
+          <velocity>-4.9e-05 2.1e-05 -0.05624 -0.00214 -0.001422 3.4e-05</velocity>
+          <acceleration>0.001982 0.02276 -71.5562 -2.74714 0.186876 0.027353</acceleration>
+          <wrench>2e-05 0.000228 -0.715562 0 -0 0</wrench>
+        </link>
+        <link name='front_right_wheel_link'>
+          <pose>3.35807 4.20353 0.029936 1.57089 0.244158 -3.14105</pose>
+          <velocity>-4.3e-05 6.5e-05 -0.088245 -0.001976 -0.001536 3.5e-05</velocity>
+          <acceleration>0.002951 0.081224 -113.43 -2.53175 -0.001312 0.027999</acceleration>
+          <wrench>3e-05 0.000812 -1.1343 0 -0 0</wrench>
+        </link>
+        <link name='laser_link'>
+          <pose>3.52805 4.10363 0.104786 9.6e-05 0.000954 -3.14109</pose>
+          <velocity>-0.000149 7e-06 -0.007691 -3.8e-05 -0.001342 4e-06</velocity>
+          <acceleration>0.026815 -0.00065 -8.3778 0.005508 0.305052 8.7e-05</acceleration>
+          <wrench>0.00321 -7.8e-05 -1.00282 0 -0 0</wrench>
+        </link>
+        <link name='steer_link'>
+          <pose>3.35812 4.10353 0.029595 9.7e-05 0.000954 -3.14107</pose>
+          <velocity>-5.2e-05 3e-06 -0.000554 0.000109 -0.001435 3e-06</velocity>
+          <acceleration>0.001662 -0.001645 1.31448 0.1984 0.173977 -0.000847</acceleration>
+          <wrench>1.7e-05 -1.6e-05 0.013145 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pista_TMR2021'>
+        <pose>0.260163 0.825992 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.260163 0.825992 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_100.SLDPRT'>
+        <pose>1.78978 4.38839 -0 -1.8e-05 -1.1e-05 1.58279</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_100'>
+          <pose>1.78978 4.38839 -0 -1.8e-05 -1.1e-05 1.58279</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.25249 -2.37225 19.0899 -1.33908 0.048512 -2.80127</acceleration>
+          <wrench>-0.208665 -0.395217 3.18038 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_50.SLDPRT'>
+        <pose>-3.22341 4.40928 0 4e-06 1.1e-05 1.58299</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_50'>
+          <pose>-3.22341 4.40928 0 4e-06 1.1e-05 1.58299</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.45411 -1.54875 -0.379569 -1.35638 1.12374 -0.344313</acceleration>
+          <wrench>0.242255 -0.258021 -0.063236 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_alto.SLDPRT'>
+        <pose>0.001072 0.536628 -0 -7e-06 -2.3e-05 0.028633</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_alto'>
+          <pose>0.001072 0.536628 -0 -7e-06 -2.3e-05 0.028633</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.30717 2.11412 1.1721 -1.53954 -1.24381 -1.05779</acceleration>
+          <wrench>0.225879 0.365321 0.202539 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_auto_v1.SLDPRT'>
+        <pose>0.562194 3.67042 0.027495 -1.7e-05 4.2e-05 -1.55043</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_auto_v1'>
+          <pose>0.562194 3.67042 0.027495 -1.7e-05 4.2e-05 -1.55043</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.20886 -1.00444 -7.73268 1.01397 -0.369617 -1.45379</acceleration>
+          <wrench>9.35365 -7.77193 -59.8324 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_auto_v1.SLDPRT_0'>
+        <pose>-5.07182 0.531822 0.0275 -4e-06 -0 3.13068</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_auto_v1'>
+          <pose>-5.07182 0.531822 0.0275 -4e-06 -0 3.13068</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.045239 4.24244 7.428 -0.487897 -0.534589 0.01926</acceleration>
+          <wrench>0.35004 32.8263 57.4749 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_auto_v1.SLDPRT_1'>
+        <pose>5.93367 0.291452 0.0275 -4e-06 -0 0.024211</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_auto_v1'>
+          <pose>5.93367 0.291452 0.0275 -4e-06 -0 0.024211</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.022791 -0.908351 1.59076 0.998573 -0.239974 -0.03521</acceleration>
+          <wrench>0.176349 -7.02845 12.3087 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_auto_v1.SLDPRT_2'>
+        <pose>5.92159 0.792798 0.0275 -4e-06 0 0.023769</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_auto_v1'>
+          <pose>5.92159 0.792798 0.0275 -4e-06 0 0.023769</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.09265 -3.86433 6.76748 1.15641 -1.03453 -0.144675</acceleration>
+          <wrench>0.716886 -29.9006 52.364 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_auto_v1.SLDPRT_3'>
+        <pose>5.92065 2.13721 0.0275 -4e-06 -0 0.023764</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_auto_v1'>
+          <pose>5.92065 2.13721 0.0275 -4e-06 -0 0.023764</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.102119 -4.26361 7.46673 0.835454 -1.14226 -0.159526</acceleration>
+          <wrench>0.790157 -32.9901 57.7745 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_auto_v1.SLDPRT_4'>
+        <pose>5.91895 2.60382 0.0275 -4e-06 0 0.023753</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_auto_v1'>
+          <pose>5.91895 2.60382 0.0275 -4e-06 0 0.023753</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.102072 -4.2636 7.46671 0.83533 -1.14172 -0.159453</acceleration>
+          <wrench>0.789793 -32.9901 57.7744 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_est.SLDPRT'>
+        <pose>-4.34551 -0.312494 1e-06 2e-05 1.9e-05 -3.05575</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_est'>
+          <pose>-4.34551 -0.312494 1e-06 2e-05 1.9e-05 -3.05575</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>2.14547 -0.231257 0.115229 -0.855351 -1.05391 -2.74952</acceleration>
+          <wrench>0.424566 -0.045763 0.022803 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_peaton.SLDPRT'>
+        <pose>-2.158 3.63773 0.089996 -6.5e-05 -0 -1.54993</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_peaton'>
+          <pose>-2.158 3.63773 0.089996 -6.5e-05 -0 -1.54993</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.162112 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_peaton.SLDPRT_0'>
+        <pose>-4.65018 0.260556 0.089993 -6.5e-05 -0 4.2e-05</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_peaton'>
+          <pose>-4.65018 0.260556 0.089993 -6.5e-05 -0 4.2e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -0.162112 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_peaton.SLDPRT_1'>
+        <pose>1.24964 -0.537983 0.089995 -0.000205 -3.9e-05 0.001756</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_peaton'>
+          <pose>1.24964 -0.537983 0.089995 -0.000205 -3.9e-05 0.001756</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 1e-05 0 9e-06</acceleration>
+          <wrench>0 0 -0.162112 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_semaforo.SLDPRT'>
+        <pose>2.68842 4.3432 -7e-06 -4.5e-05 4.7e-05 -1.5007</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_semaforo'>
+          <pose>2.68842 4.3432 -7e-06 -4.5e-05 4.7e-05 -1.5007</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 -2.2e-05 -6e-05 -1.5e-05</acceleration>
+          <wrench>0 0 -2.62356 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roscar_semaforo.SLDPRT_0'>
+        <pose>0.532632 -0.62582 -1e-06 -6.3e-05 1.9e-05 0.00147</pose>
+        <scale>1 1 1</scale>
+        <link name='roscar_semaforo'>
+          <pose>0.532632 -0.62582 -1e-06 -6.3e-05 1.9e-05 0.00147</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.277297 0.108962 -8.41584 -0.548489 1.48316 -0.849162</acceleration>
+          <wrench>0.074235 0.02917 -2.253 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>7.09463 8.79223 4.29681 0 0.421796 -2.276</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='AutoNOMOS_mini'>
+      <link name='base_link'>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='body'>
+        <inertial>
+          <mass>6</mass>
+          <inertia>
+            <ixx>0.0067</ixx>
+            <ixy>0</ixy>
+            <ixz>0.00088</ixz>
+            <iyy>0.07846</iyy>
+            <iyz>0</iyz>
+            <izz>0.08387</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual_body'>
+          <geometry>
+            <mesh>
+              <uri>model://AutoNOMOS_mini/meshes/autonomos.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision_body'>
+          <geometry>
+            <mesh>
+              <uri>model://AutoNOMOS_mini/meshes/autonomos.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <sensor name='imu_sensor' type='imu'>
+          <always_on>1</always_on>
+          <update_rate>50</update_rate>
+          <visualize>1</visualize>
+          <topic>__default_topic__</topic>
+          <plugin name='imu_plugin' filename='libgazebo_ros_imu_sensor.so'>
+            <topicName>imu</topicName>
+            <updateRateHZ>50.0</updateRateHZ>
+            <gaussianNoise>0.0</gaussianNoise>
+            <xyzOffset>0 0 0</xyzOffset>
+            <rpyOffset>0 0 0</rpyOffset>
+            <frameName>imu_link</frameName>
+          </plugin>
+          <pose>0 0 0 0 -0 0</pose>
+          <imu/>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='base_link_to_body' type='fixed'>
+        <pose>0 0 0 0 -0 0</pose>
+        <parent>base_link</parent>
+        <child>body</child>
+      </joint>
+      <link name='back_left_wheel_link'>
+        <pose>-0.125 0.1 0.01 1.5708 -0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='back_left_wheel_link_geom'>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.03</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='back_left_wheel_link_visual'>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.03</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='back_left_wheel_joint' type='revolute'>
+        <child>back_left_wheel_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='back_right_wheel_link'>
+        <pose>-0.125 -0.1 0.01 1.5708 -0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='back_right_wheel_link_geom'>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.03</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='back_right_wheel_link_visual'>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.03</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='back_right_wheel_joint' type='revolute'>
+        <child>back_right_wheel_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='front_left_bar_link'>
+        <pose>0.125 0.06 0.01 0 -0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='front_left_bar_link_geom'>
+          <geometry>
+            <box>
+              <size>0.04 0.02 0.005</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='front_left_bar_link_visual'>
+          <geometry>
+            <box>
+              <size>0.04 0.02 0.005</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='front_left_bar_joint' type='revolute'>
+        <child>front_left_bar_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 0 1</xyz>
+          <limit>
+            <lower>-0.5</lower>
+            <upper>0.5</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='front_left_wheel_link'>
+        <pose>0.125 0.1 0.01 1.5708 -0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='front_left_wheel_link_geom'>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.03</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='front_left_wheel_link_visual'>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.03</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='front_left_wheel_joint' type='revolute'>
+        <child>front_left_wheel_link</child>
+        <parent>front_left_bar_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='front_right_bar_link'>
+        <pose>0.125 -0.06 0.01 0 -0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='front_right_bar_link_geom'>
+          <geometry>
+            <box>
+              <size>0.04 0.02 0.005</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='front_right_bar_link_visual'>
+          <geometry>
+            <box>
+              <size>0.04 0.02 0.005</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='front_right_bar_joint' type='revolute'>
+        <child>front_right_bar_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 0 1</xyz>
+          <limit>
+            <lower>-0.5</lower>
+            <upper>0.5</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='front_right_wheel_link'>
+        <pose>0.125 -0.1 0.01 1.5708 -0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='front_right_wheel_link_geom'>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.03</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='front_right_wheel_link_visual'>
+          <geometry>
+            <cylinder>
+              <length>0.01</length>
+              <radius>0.03</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/White</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='front_right_wheel_joint' type='revolute'>
+        <child>front_right_wheel_link</child>
+        <parent>front_right_bar_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='steer_link'>
+        <pose>0.125 0 0.01 0 -0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='steer_link_geom'>
+          <geometry>
+            <box>
+              <size>0.04 0.02 0.005</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='steer_link_visual'>
+          <geometry>
+            <box>
+              <size>0.04 0.02 0.005</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='steer_joint' type='revolute'>
+        <child>steer_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 0 1</xyz>
+          <limit>
+            <lower>-0.5</lower>
+            <upper>0.5</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='ackermann_bar_link'>
+        <pose>0.11 0 0.01 0 -0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='ackermann_bar_link_geom'>
+          <geometry>
+            <box>
+              <size>0.02 0.15 0.01</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='ackermann_bar_link_visual'>
+          <geometry>
+            <box>
+              <size>0.02 0.15 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='ackermann_joint' type='revolute'>
+        <child>ackermann_bar_link</child>
+        <parent>steer_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 0 1</xyz>
+          <limit>
+            <lower>-0.5</lower>
+            <upper>0.5</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <joint name='ackermann_left_bar_joint' type='revolute'>
+        <parent>front_left_bar_link</parent>
+        <child>ackermann_bar_link</child>
+        <axis>
+          <xyz expressed_in='__model__'>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+        <pose>0 0.06 0 0 -0 0</pose>
+      </joint>
+      <joint name='ackermann_right_bar_joint' type='revolute'>
+        <parent>front_right_bar_link</parent>
+        <child>ackermann_bar_link</child>
+        <axis>
+          <xyz expressed_in='__model__'>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+        <pose>0 -0.06 0 0 -0 0</pose>
+      </joint>
+      <link name='laser_link'>
+        <pose>-0.045 0 0.085 0 -0 0</pose>
+        <inertial>
+          <mass>0.1197</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision_laser_link'>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.04</radius>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_laser_link'>
+          <geometry>
+            <cylinder>
+              <length>0.025</length>
+              <radius>0.04</radius>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <sensor name='laser' type='ray'>
+          <pose>0 0 0 0 -0 0</pose>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>6.28319</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.12</min>
+              <max>6</max>
+              <resolution>0.01</resolution>
+            </range>
+          </ray>
+          <plugin name='laser' filename='libgazebo_ros_laser.so'>
+            <robotNamespace/>
+            <topicName>/scan</topicName>
+            <frameName>map</frameName>
+          </plugin>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>0</visualize>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='laser_joint' type='fixed'>
+        <child>laser_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+        </axis>
+      </joint>
+      <link name='camera_link'>
+        <pose>-0.03 0 0.145 0 0.06 0</pose>
+        <inertial>
+          <mass>0.1197</mass>
+          <inertia>
+            <ixx>0.01</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.01</iyy>
+            <iyz>0</iyz>
+            <izz>0.01</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision_camera_link'>
+          <geometry>
+            <box>
+              <size>0.02 0.11 0.02</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_camera_link'>
+          <geometry>
+            <box>
+              <size>0.02 0.11 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <sensor name='camera' type='depth'>
+          <update_rate>30</update_rate>
+          <visualize>1</visualize>
+          <always_on>1</always_on>
+          <camera>
+            <horizontal_fov>1.0472</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <depth_camera>
+              <output>points</output>
+            </depth_camera>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <plugin name='${link_name}_controller' filename='libgazebo_ros_openni_kinect.so'>
+            <baseline>0.2</baseline>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>30</updateRate>
+            <cameraName>app</cameraName>
+            <imageTopicName>camera/rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>camera/rgb/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>camera/depth/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>camera/depth/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>camera/points</pointCloudTopicName>
+            <frameName>map</frameName>
+            <pointCloudCutoffMax>0.5</pointCloudCutoffMax>
+            <pointCloudCutoff>0.5</pointCloudCutoff>
+            <CxPrime>0</CxPrime>
+            <Cx>0</Cx>
+            <Cy>0</Cy>
+            <focalLength>0</focalLength>
+            <hackBaseline>0</hackBaseline>
+          </plugin>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='camera_joint' type='fixed'>
+        <child>camera_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz expressed_in='__model__'>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+        </axis>
+      </joint>
+      <plugin name='test_control' filename='libautonomos_plugin.so'>
+        <debug>1</debug>
+      </plugin>
+      <pose>3.4872 4.10296 0 0 0 -3.14159</pose>
+    </model>
+  </world>
+</sdf>
