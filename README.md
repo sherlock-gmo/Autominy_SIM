@@ -3,6 +3,8 @@ This repository is a collection of software developed for the [AutoMiny](https:/
 
 ## Required Dependencies
 This software was tested on ROS melodic and ROS noetic.
+- [Gazebo Math](https://gazebosim.org/api/math/7/install.html)
+- [Ignition Transport v4] (https://gazebosim.org/api/transport/9.0/installation.html)
 - [CUDA 11.7](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html) See for example some of these pages: [1](https://techzizou.com/install-cuda-and-cudnn-on-windows-and-linux/#linux), [2](https://medium.com/geekculture/yolov4-darknet-installation-and-usage-on-your-system-windows-linux-8dec2cea6e81#a59a), [3](https://pjreddie.com/darknet/yolo/)
 - cuDNN 8.4.1.50
 - OpenCV  Install it as [here](https://efcomputer.net.au/blog/4-steps-to-install-darknet-with-cuda-and-opencv-for-realtime-object-detection/).
