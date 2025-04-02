@@ -27,13 +27,13 @@ message("Gazebo version major:" ${GAZEBO_VERSION_MAJOR})
 
 add_definitions(-DGAZEBO_VERSION_MAJOR=${GAZEBO_VERSION_MAJOR})
 
-if(ignition-msgs1_FOUND OR ignition-msgs2_FOUND)
+if(ignition-msgs1_FOUND OR ignition-msgs5_FOUND)
 	message("ignition msgs FOUND")
 else()
 	message(FATAL_ERROR "ignition msgs NOT FOUND. Version 1 or higher REQUIRED. Install it or set the correct paths")
 endif()
 
-if(ignition-transport4_FOUND OR ignition-transport5_FOUND)
+if(ignition-transport4_FOUND OR ignition-transport8_FOUND)
 	message("ignition transport FOUND")
 else()
 	message(FATAL_ERROR "ignition transport NOT FOUND. Version 4 or higher REQUIRED. Install it or set the correct paths")
